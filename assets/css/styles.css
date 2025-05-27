@@ -1,0 +1,361 @@
+body {
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+section {
+    transition: all 0.5s ease; /* Efek transisi halus */
+}
+
+#beranda {
+    background: linear-gradient(to bottom, #5D8736, #809D3C);
+    min-height: 660px;
+}
+
+#solusi {
+    background: #5D8736;
+}
+
+.btn-s{
+    background-color: #F4FFC3;
+}
+
+.btn-s:hover{
+    background-color: #72bc2c;
+    color: white;
+}
+
+#banner {
+    background-image: url(../img/banner.jpg);
+    width: 100%;
+    min-height: 50vh;  
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.3s ease-in-out;
+    padding-top: 20px;  
+    padding-bottom: 20px;  
+    overflow: hidden;
+}
+
+#head {
+    background-image: url(../img/ban.jpg);
+    width: 100%;
+    min-height: 40vh;  
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.3s ease-in-out;
+    padding-top: 20px;  
+    padding-bottom: 20px;  
+    overflow: hidden;
+}
+
+.contact-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px #3E7B27;
+    height: 100%;
+}
+
+.swiper-slide .card {
+    width: 100%;
+    max-width: 500px; /* Atur lebar maksimum */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px #51f15f;
+    background: white;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(3, 224, 10, 0.5);
+}
+
+/* Membuat semua gambar memiliki ukuran yang seragam */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+}
+
+/* Memastikan tinggi card-body seragam */
+.swiper-slide .card-body {
+    flex: 1; /* Mengisi tinggi card secara merata */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Tombol tetap di bagian bawah */
+.text-center {
+    margin-top: auto; /* Mendorong tombol ke bawah */
+}
+
+
+/* Default untuk layar besar */
+.slider-container {
+    width: 100%;
+    max-width: 500px; /* Batas maksimum agar gambar tidak terlalu besar */
+    max-height: 500px;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Styling for slider */
+        .slider {
+            position: relative;
+            overflow: hidden;
+            top: 30px;
+            width: 100%;
+            border-radius: 30px;
+            height: 500px;
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: opacity 1s ease-in-out;
+        }
+
+
+        .slider .slide:not(:first-child) {
+            opacity: 0;
+        }
+
+/* Menyesuaikan tinggi gambar dengan tinggi teks */
+@media (min-width: 992px) { /* Layar besar (desktop) */
+    .slider-container {
+        height: 90%; 
+        display: flex;
+        align-items: center;
+        max-width: 90%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .slider-container {
+        max-width: 90%;
+        max-height: 90%; 
+    }
+}
+
+/* Smartphone */
+@media (max-width: 768px) {
+    .slider-container {
+        max-width: 90%;
+        max-height: 90%;
+    }
+    .slider  {
+        max-height: 350px; 
+        width: auto;
+        object-fit: cover; 
+    }
+    #banner {
+        min-height: 100vh;  /* Untuk layar lebih kecil, tinggi akan menyesuaikan dengan ukuran layar */
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    iframe {
+        min-height: 200px;
+    }
+
+    .text-fix {
+        padding-left: 24px; /* Menyesuaikan dengan ikon agar sejajar */
+    }
+}
+
+/* HP kecil */
+@media (max-width: 480px) {
+    .slider-container {
+        max-width: 90%;
+        max-height: 90%;
+    }
+    .slider  {
+        max-height: 350px; 
+        width: auto;
+        object-fit: cover; 
+    }
+}
+
+
+.collapse {
+    transition: height 0.15s ease-in-out; 
+}
+
+.icon-faq {
+    font-size: 1.25rem; /* Ukuran ikon sesuai dengan teks */
+    line-height: 1.5; /* Menyesuaikan dengan tinggi teks */
+    display: flex;
+    align-items: center;
+}
+
+.text-fix {
+    text-align: left;
+}
+
+.navbar {
+    box-shadow: 0 4px 2px -2px gray; 
+} 
+
+.nav-link{
+    color: #3e8226;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #7ef553;
+}
+
+.fixed-size-img {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 20px;
+}
+
+.map-container {
+    border-right: 1px solid #dee2e6;
+    height: 100%;
+    min-height: 500px;
+    }
+
+iframe {
+    min-height: 400px;
+}
+
+
+.scroll-to-top {
+            position: fixed;
+            bottom: 20px; /* Jarak dari bawah */
+            right: 20px; /* Jarak dari kanan */
+            display: none; /* Sembunyikan tombol secara default */
+            background-color: #1a1a1b; /* Warna latar belakang tombol */
+            color: white; /* Warna teks tombol */
+            border: none; 
+            border-radius: 5px; /* Sudut membulat */
+            padding: 10px 15px; /* Padding tombol */
+            cursor: pointer; /* Kursor pointer saat hover */
+            z-index: 1000; /* Pastikan tombol di atas elemen lain */
+        }
+
+        .scroll-to-top:hover {
+            background-color: #3f3e3e; /* Warna latar belakang saat hover */
+        }
+
+        .btn-wa {
+            background-color: #02850d; /* Warna latar belakang tombol */
+            color: white; /* Warna teks tombol */
+            border: none; 
+            border-radius: 25px; /* Sudut membulat */
+            cursor: pointer; /* Kursor pointer saat hover */
+        }
+
+.btn-wa:hover {
+            background-color: #03f117; /* Warna latar belakang saat hover */
+        }
+
+        .btn-g {
+            background-color: #0088ff; /* Warna latar belakang tombol */
+            color: white; /* Warna teks tombol */
+            border: none; 
+            border-radius: 25px; /* Sudut membulat */
+            cursor: pointer; /* Kursor pointer saat hover */
+        }
+
+.btn-g:hover {
+            background-color: #0262b5; /* Warna latar belakang saat hover */
+        }
+
+.btn-wa-p {
+            position: fixed;
+            text-decoration: none;
+            bottom: 20px; /* Jarak dari bawah */
+            left: 20px; 
+            background-color: #00990d; /* Warna latar belakang tombol */
+            color: white; /* Warna teks tombol */
+            border: none; 
+            border-radius: 25px; /* Sudut membulat */
+            padding: 15px 15px; /* Padding tombol */
+            cursor: pointer; /* Kursor pointer saat hover */
+            z-index: 1000; /* Pastikan tombol di atas elemen lain */
+        }
+
+.btn-wa-p:hover {
+            background-color: #03f117; 
+            color: rgb(0, 16, 14);
+            text-decoration: none;
+        }
+
+.btn-warning{
+    border: none;
+}
+
+.btn-warning:hover {
+            background-color: #000000; 
+            color: rgb(255, 255, 255);
+        }
+
+.text-content {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    }
+    
+
+
+.faq-item {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+}
+
+.faq-answer {
+    background: #f8f9fa;
+    color: black;
+    border-radius: 5px;
+}
+
+.bawah{
+    font-weight: bold;
+}
+
+.bawah::after {
+    content: "";
+    display: block;
+    width: 70px; /* Atur panjang garis */
+    height: 2px; /* Ketebalan garis */
+    background-color: #448f29;
+    margin-top: 4px;
+}

@@ -1,0 +1,41 @@
+# Menghindari Indexing folder dan mengalihkan URL
+Options -Indexes
+
+# Aktifkan mod_rewrite
+RewriteEngine On
+
+# Pastikan pengalihan ke HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Pengalihan ke file index.php jika file yang diminta tidak ada
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?x=$1 [L]
+
+# Caching untuk gambar, JS, CSS (penyesuaian jika perlu)
+<FilesMatch "\.(jpg|jpeg|png|gif|js|css|ico)$">
+    Require all granted
+    Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+
+<Directory "/favicon">
+    Require all granted
+</Directory>
+
+
+# Menambahkan header keamanan untuk melindungi situs
+Header set X-Content-Type-Options "nosniff"
+Header set X-XSS-Protection "1; mode=block"
+Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set Referrer-Policy "no-referrer-when-downgrade"
+
+# Pastikan file .htaccess diterima oleh server
+<IfModule mod_headers.c>
+    Header always append X-Content-Type-Options nosniff
+    Header always append X-XSS-Protection "1; mode=block"
+    Header always append Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header always append X-Frame-Options "SAMEORIGIN"
+    Header always append Referrer-Policy "no-referrer-when-downgrade"
+</IfModule>
